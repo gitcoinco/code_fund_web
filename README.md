@@ -1,5 +1,8 @@
 # CodeFund Web
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d8bbe0f8-8434-48c6-be40-973867064af0/deploy-status)](https://app.netlify.com/sites/codefund/deploys)
+![Linters](https://github.com/gitcoinco/code_fund_web/workflows/Linters/badge.svg)
+
 ## Table of Contents
 
 - [Development](#development)

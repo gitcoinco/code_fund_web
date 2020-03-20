@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: Title
+title: Title Change
 image: /img/dashboard-ui.png
 heading: Heading
 subheading: Subheading

@@ -1,0 +1,22 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "strict": 0,
+    "react/display-name": 0
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

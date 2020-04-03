@@ -6,8 +6,8 @@ export default {
   title: "Metric",
   component: Metric,
   parameters: {
-    info: { inline: false }
-  }
+    info: { inline: false },
+  },
 };
 
 export const base = () => <Metric />;

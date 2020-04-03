@@ -7,7 +7,7 @@ import instagram from "../img/social/instagram.svg";
 import twitter from "../img/social/twitter.svg";
 import vimeo from "../img/social/vimeo.svg";
 
-const Footer = class extends React.Component {
+export default class Footer extends React.Component {
   render() {
     return (
       <footer className="">
@@ -101,6 +101,4 @@ const Footer = class extends React.Component {
       </footer>
     );
   }
-};
-
-export default Footer;
+}

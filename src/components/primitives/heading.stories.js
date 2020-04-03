@@ -6,8 +6,8 @@ export default {
   title: "Heading",
   component: Heading,
   parameters: {
-    info: { inline: false }
-  }
+    info: { inline: false },
+  },
 };
 
 export const base = () => <Heading>H1 heading</Heading>;

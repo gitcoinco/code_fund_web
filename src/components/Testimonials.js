@@ -9,7 +9,7 @@ const Testimonials = ({ testimonials }) => {
   return (
     <Box base="bg-indigo-800">
       <Box base="max-w-screen-xl mx-auto" md="grid grid-cols-3 px-6" lg="px-8">
-        {testimonials.map(testimonial => (
+        {testimonials.map((testimonial) => (
           <article key={v4()}>
             <Box
               base="px-4 py-12 px-6"
@@ -49,7 +49,9 @@ const Testimonials = ({ testimonials }) => {
                   </Box>
                   <Box base="text-base font-medium leading-6 text-indigo-200">
                     {testimonial.author.title},
-                    <a href={testimonial.author.company.url}>{testimonial.author.company.name}</a>
+                    <a href={testimonial.author.company.url}>
+                      {testimonial.author.company.name}
+                    </a>
                   </Box>
                 </Box>
               </Box>
@@ -71,11 +73,11 @@ Testimonials.propTypes = {
         company: PropTypes.shape({
           name: PropTypes.string,
           url: PropTypes.string,
-          logo: PropTypes.string
-        })
-      })
+          logo: PropTypes.string,
+        }),
+      }),
     })
-  )
+  ),
 };
 
 export default Testimonials;

@@ -14,7 +14,7 @@ export const ProductPageTemplate = ({
   intro,
   main,
   fullImage,
-  pricing
+  pricing,
 }) => (
   <div className="">
     <div
@@ -22,7 +22,7 @@ export const ProductPageTemplate = ({
       style={{
         backgroundImage: `url(${
           image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`
+        })`,
       }}
     >
       <h2 className="">{title}</h2>
@@ -73,7 +73,7 @@ export const ProductPageTemplate = ({
                     fullImage.childImageSharp
                       ? fullImage.childImageSharp.fluid.src
                       : fullImage
-                  })`
+                  })`,
                 }}
               />
               <h2 className="">{pricing.heading}</h2>
@@ -93,21 +93,21 @@ ProductPageTemplate.propTypes = {
   heading: PropTypes.string,
   description: PropTypes.string,
   intro: PropTypes.shape({
-    blurbs: PropTypes.array
+    blurbs: PropTypes.array,
   }),
   main: PropTypes.shape({
     heading: PropTypes.string,
     description: PropTypes.string,
     image1: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     image2: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    image3: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
+    image3: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   }),
   fullImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   pricing: PropTypes.shape({
     heading: PropTypes.string,
     description: PropTypes.string,
-    plans: PropTypes.array
-  })
+    plans: PropTypes.array,
+  }),
 };
 
 const ProductPage = ({ data }) => {
@@ -132,9 +132,9 @@ const ProductPage = ({ data }) => {
 ProductPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object
-    })
-  })
+      frontmatter: PropTypes.object,
+    }),
+  }),
 };
 
 export default ProductPage;

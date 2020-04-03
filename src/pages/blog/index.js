@@ -10,7 +10,7 @@ export default class BlogIndexPage extends React.Component {
         <div
           className=""
           style={{
-            backgroundImage: `url('/img/blog-index.jpg')`
+            backgroundImage: `url('/img/blog-index.jpg')`,
           }}
         >
           <h1 className="">Latest Stories</h1>

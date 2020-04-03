@@ -8,8 +8,8 @@ export default {
   title: "Tile",
   component: Tile,
   parameters: {
-    info: { inline: false }
-  }
+    info: { inline: false },
+  },
 };
 
 export const base = () => (

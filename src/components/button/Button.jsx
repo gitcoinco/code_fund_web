@@ -13,11 +13,11 @@ const Button = ({ children }) => (
 );
 
 Button.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 Button.defaultProps = {
-  children: undefined
+  children: undefined,
 };
 
 export { Button };

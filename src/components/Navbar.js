@@ -28,7 +28,7 @@ function Navbar() {
             <div
               className={`${isExpanded ? `block` : `hidden`} md:ml-6 md:flex`}
             >
-              {menuLinks.map(link => (
+              {menuLinks.map((link) => (
                 <Link
                   className="inline-flex items-center px-1 pt-1 mx-4 text-sm font-medium leading-5 text-gray-100 transition duration-150 ease-in-out border-b-2 border-transparent hover:text-white hover:border-white focus:outline-none focus:text-gray-700 focus:border-white"
                   key={link.name}

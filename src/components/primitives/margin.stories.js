@@ -7,8 +7,8 @@ export default {
   title: "Margin",
   component: Margin,
   parameters: {
-    info: { inline: false }
-  }
+    info: { inline: false },
+  },
 };
 
 export const margin = () => (

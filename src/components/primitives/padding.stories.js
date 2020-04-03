@@ -7,8 +7,8 @@ export default {
   title: "Padding",
   component: Padding,
   parameters: {
-    info: { inline: false }
-  }
+    info: { inline: false },
+  },
 };
 
 export const padding = () => (

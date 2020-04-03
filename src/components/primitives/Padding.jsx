@@ -9,7 +9,7 @@ export const Padding = ({
   left,
   xAxis,
   yAxis,
-  children
+  children,
 }) => {
   const classes = `p-${all} pt-${top} pr-${right} pb-${bottom} pl-${left} px-${xAxis} py-${yAxis}`;
   return <div className={classes}>{children}</div>;
@@ -23,7 +23,7 @@ Padding.propTypes = {
   left: PropTypes.string,
   xAxis: PropTypes.string,
   yAxis: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 // Padding.defaultProps = {

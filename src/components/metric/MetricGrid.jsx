@@ -17,12 +17,12 @@ const MetricGrid = ({ children, columns }) => (
 
 MetricGrid.propTypes = {
   children: PropTypes.node,
-  columns: PropTypes.number
+  columns: PropTypes.number,
 };
 
 MetricGrid.defaultProps = {
   children: undefined,
-  columns: 3
+  columns: 3,
 };
 
 export { MetricGrid };

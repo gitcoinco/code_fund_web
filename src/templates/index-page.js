@@ -61,8 +61,8 @@ IndexPageTemplate.propTypes = {
   hero: PropTypes.object,
   testimonials: PropTypes.array,
   intro: PropTypes.shape({
-    blurbs: PropTypes.array
-  })
+    blurbs: PropTypes.array,
+  }),
 };
 // IndexPageTemplate.propTypes = {
 //   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -94,9 +94,9 @@ const IndexPage = ({ data }) => {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object
-    })
-  })
+      frontmatter: PropTypes.object,
+    }),
+  }),
 };
 
 export default IndexPage;

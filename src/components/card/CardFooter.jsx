@@ -6,11 +6,11 @@ const CardFooter = ({ children }) => (
 );
 
 CardFooter.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 CardFooter.defaultProps = {
-  children: undefined
+  children: undefined,
 };
 
 export { CardFooter };

@@ -7,8 +7,8 @@ export default {
   title: "Text",
   component: Text,
   parameters: {
-    info: { inline: false }
-  }
+    info: { inline: false },
+  },
 };
 
 export const element = () => (

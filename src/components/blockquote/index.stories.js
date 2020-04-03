@@ -6,8 +6,8 @@ export default {
   title: "Blockquote",
   component: Blockquote,
   parameters: {
-    info: { inline: false }
-  }
+    info: { inline: false },
+  },
 };
 
 export const full = () => (

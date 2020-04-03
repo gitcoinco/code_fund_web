@@ -6,8 +6,8 @@ export default {
   title: "Card",
   component: Card,
   parameters: {
-    info: { inline: false }
-  }
+    info: { inline: false },
+  },
 };
 
 export const full = () => (

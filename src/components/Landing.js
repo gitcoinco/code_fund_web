@@ -57,7 +57,7 @@ Landing.propTypes = {
   image: PropTypes.any,
   subtitle: PropTypes.string,
   title: PropTypes.string,
-  copy: PropTypes.string
+  copy: PropTypes.string,
 };
 
 export default Landing;

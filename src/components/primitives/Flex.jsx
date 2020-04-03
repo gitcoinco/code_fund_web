@@ -9,7 +9,7 @@ export const Flex = ({
   align,
   height,
   width,
-  children
+  children,
 }) => {
   const classes = `h-${height} w-${width} ${display} flex-${direction} flex-${wrap} justify-${justify} items-${align}`;
   return <div className={classes}>{children}</div>;
@@ -24,7 +24,7 @@ Flex.propTypes = {
   align: PropTypes.string,
   height: PropTypes.string,
   width: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 Flex.defaultProps = {
@@ -35,5 +35,5 @@ Flex.defaultProps = {
   align: "start",
   height: "full",
   width: "full",
-  children: undefined
+  children: undefined,
 };

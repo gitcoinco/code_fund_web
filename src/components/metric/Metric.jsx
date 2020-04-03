@@ -12,12 +12,12 @@ const Metric = ({ quantity, unit }) => (
 
 Metric.propTypes = {
   quantity: PropTypes.string,
-  unit: PropTypes.string
+  unit: PropTypes.string,
 };
 
 Metric.defaultProps = {
   quantity: "0",
-  unit: "Units"
+  unit: "Units",
 };
 
 export { Metric };

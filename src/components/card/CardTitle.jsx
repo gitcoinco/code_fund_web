@@ -6,11 +6,11 @@ const CardTitle = ({ children }) => (
 );
 
 CardTitle.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 CardTitle.defaultProps = {
-  children: undefined
+  children: undefined,
 };
 
 export { CardTitle };

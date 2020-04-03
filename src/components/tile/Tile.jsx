@@ -9,12 +9,12 @@ const Tile = ({ colspan, children }) => (
 
 Tile.propTypes = {
   colspan: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 Tile.defaultProps = {
   colspan: "1",
-  children: undefined
+  children: undefined,
 };
 
 export { Tile };

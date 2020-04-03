@@ -24,8 +24,8 @@ const Landing = ({ image, title, subtitle, copy }) => (
           xl="mt-28"
         >
           <Box base="text-center" lg="text-left">
-            <Heading size="1">{title}</Heading>
-            <Heading size="3">{subtitle}</Heading>
+            <Heading level="1">{title}</Heading>
+            <Heading level="3">{subtitle}</Heading>
             <Text>{copy}</Text>
             <Box base="mt-5" sm="mt-8 flex justify-center" lg="justify-start">
               <Box base="rounded-md shadow">

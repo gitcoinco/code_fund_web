@@ -12,11 +12,7 @@ const Testimonials = ({ testimonials }) => {
       <Box base="max-w-screen-xl mx-auto" md="grid grid-cols-3 px-6" lg="px-8">
         {testimonials.map((testimonial) => (
           <article key={v4()}>
-            <Box
-              base="px-4 py-12 px-6"
-              md="flex flex-col py-16 pl-0 pr-10"
-              lg="pr-16"
-            >
+            <Box base="px-4 py-12" md="flex flex-col py-16" lg="">
               <Box md="md:flex-shrink-0">
                 <Image
                   src={testimonial.author.company.logo}

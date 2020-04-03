@@ -45,10 +45,19 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
-          - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
           - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
+          - {
+              label: Hero,
+              name: hero,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Subtitle, name: subtitle, widget: text },
+                  { label: Copy, name: copy, widget: text },
+                  { label: Image, name: image, widget: image },
+                ],
+            }
           - {
               label: Mainpitch,
               name: mainpitch,
@@ -57,6 +66,26 @@ collections:
                 [
                   { label: Title, name: title, widget: string },
                   { label: Description, name: description, widget: text },
+                  {
+                    label: Marketing Image,
+                    name: marketingImage,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Alt, name: alt, widget: string },
+                        { label: Image, name: image, widget: image },
+                      ],
+                  },
+                  {
+                    label: Metrics,
+                    name: metrics,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Quantity, name: quantity, widget: string },
+                        { label: Unit, name: unit, widget: string },
+                      ],
+                  },
                 ],
             }
           - { label: Description, name: description, widget: string }
@@ -213,7 +242,16 @@ collections:
               fields:
                 [
                   { label: Quote, name: quote, widget: string },
-                  { label: Author, name: author, widget: string },
+                  {
+                    label: Author,
+                    name: author,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Name, name: name, widget: string },
+                        { label: Title, name: title, widget: string },
+                      ],
+                  },
                 ],
             }
           - { label: Full_image, name: full_image, widget: image }

@@ -23,47 +23,47 @@ const config = {
   // Links to social profiles/projects you want to display in the author segment/navigation bar.
   avatar: {
     description: "",
-    photo: ""
+    photo: "",
   },
   userLinks: [
     {
       label: "github",
-      url: "https://github.com/tiagofsanchez/tfs-starter"
+      url: "https://github.com/tiagofsanchez/tfs-starter",
     },
     {
       label: "linkedin",
-      url: "https://www.linkedin.com/in/tiago-formosinho-sanchez-3764225/"
+      url: "https://www.linkedin.com/in/tiago-formosinho-sanchez-3764225/",
     },
     {
       label: "email",
-      url: "mailto:tiagofsanchez@gmail.com"
-    }
+      url: "mailto:tiagofsanchez@gmail.com",
+    },
   ],
   menuLinks: [
     {
       name: "Home",
-      url: "/"
+      url: "/",
     },
     {
       name: "Advertisers",
-      url: "/advertisers"
+      url: "/advertisers",
     },
     {
       name: "Publishers",
-      url: "/publishers"
+      url: "/publishers",
     },
     {
       name: "Podcasts",
-      url: "/podcasts"
+      url: "/podcasts",
     },
     {
       name: "Blog",
-      url: "/blog"
-    }
+      url: "/blog",
+    },
   ],
   copyright: "Copyright © 2020. CodeFund", // Copyright string for the footer of the website and RSS feed.
   themeColor: "#15003e", // Used for setting manifest and progress theme colors.
-  backgroundColor: "#f7fafc" // Used for setting manifest background color.
+  backgroundColor: "#f7fafc", // Used for setting manifest background color.
 };
 
 // Validate

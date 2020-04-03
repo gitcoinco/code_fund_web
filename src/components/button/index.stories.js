@@ -6,8 +6,8 @@ export default {
   title: "Button",
   component: Button,
   parameters: {
-    info: { inline: false }
-  }
+    info: { inline: false },
+  },
 };
 
 export const simple = () => <Button>Click Me</Button>;

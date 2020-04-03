@@ -7,8 +7,8 @@ export default {
   title: "Image",
   component: Image,
   parameters: {
-    info: { inline: false }
-  }
+    info: { inline: false },
+  },
 };
 
 export const tile = () => (

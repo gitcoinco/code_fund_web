@@ -1,41 +1,49 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Box } from "./Box.jsx";
-import { resolveAlignmentClass } from "../utils/resolvers";
 
-const Text = ({ size, align, children }) => {
-  const resolveElement = {
-    small: "small",
-    default: "p",
-    strong: "strong",
-    span: "span"
-  };
-
-  // const resolveWeight = {
-  //   "thin": "font-thin",
-  //   "default": "font-normal",
-  //   "bold": "font-bold",
-  // };
-
-  const classes = `${resolveAlignmentClass(align)}`;
-
-  return (
-    <Box is={resolveElement[size]} classNames={classes}>
-      {children}
-    </Box>
-  );
+export const Text = ({
+  element,
+  leading,
+  tracking,
+  font,
+  color,
+  base,
+  size,
+  weight,
+  align,
+  position,
+  children,
+}) => {
+  const Component = element;
+  const classes = `${base} text-${color} font-${font} text-${size} font-${weight} text-${align} leading-${leading} tracking-${tracking} position-${position}`;
+  return <Component className={classes}>{children}</Component>;
 };
 
 Text.propTypes = {
+  align: PropTypes.string,
+  base: PropTypes.string,
   children: PropTypes.node,
+  color: PropTypes.string,
+  element: PropTypes.string,
+  font: PropTypes.string,
+  fontStyle: PropTypes.string,
   size: PropTypes.string,
-  align: PropTypes.string
+  weight: PropTypes.string,
+  leading: PropTypes.string,
+  tracking: PropTypes.string,
+  position: PropTypes.string,
 };
 
 Text.defaultProps = {
+  align: "left",
+  base: undefined,
   children: undefined,
-  size: "default",
-  align: "left"
+  color: "gray-900",
+  element: "p",
+  font: "sans",
+  size: "base",
+  weight: "normal",
+  leading: "normal",
+  tracking: "base",
+  position: "relative",
 };
-
-export { Text };

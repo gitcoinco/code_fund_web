@@ -7,6 +7,6 @@ export default (componentProps, filterList) =>
     }
     return {
       ...newProps,
-      [prop]: componentProps[prop]
+      [prop]: componentProps[prop],
     };
   }, {});

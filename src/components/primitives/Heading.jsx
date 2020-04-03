@@ -10,7 +10,7 @@ const Heading = ({ level, align, children }) => {
     "3": "h3",
     "4": "h4",
     "5": "h5",
-    "6": "h6"
+    "6": "h6",
   };
 
   const resolveClasses = {
@@ -22,13 +22,13 @@ const Heading = ({ level, align, children }) => {
       "text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl sm:leading-10",
     "4":
       "text-2xl leading-8 font-extrabold tracking-tight sm:text-3xl sm:leading-9",
-    "5": "text-lg leading-6 font-medium"
+    "5": "text-lg leading-6 font-medium",
   };
 
   const classes = `${resolveClasses[level]} ${resolveAlignmentClass(align)}`;
 
   return (
-    <Box is={resolveLevel[level]} classNames={classes}>
+    <Box component={resolveLevel[level]} base={classes}>
       {children}
     </Box>
   );
@@ -37,13 +37,13 @@ const Heading = ({ level, align, children }) => {
 Heading.propTypes = {
   children: PropTypes.node,
   level: PropTypes.string,
-  align: PropTypes.string
+  align: PropTypes.string,
 };
 
 Heading.defaultProps = {
   children: undefined,
   level: "2",
-  align: "left"
+  align: "left",
 };
 
 export { Heading };

@@ -12,13 +12,13 @@ const Card = ({ children, bgColor, textColor }) => (
 Card.propTypes = {
   children: PropTypes.node,
   bgColor: PropTypes.string,
-  textColor: PropTypes.string
+  textColor: PropTypes.string,
 };
 
 Card.defaultProps = {
   children: undefined,
   bgColor: "white",
-  textColor: "grey-800"
+  textColor: "grey-800",
 };
 
 export { Card };

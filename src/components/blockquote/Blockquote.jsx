@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 // import { BlockquoteFooter } from "./BlockquoteFooter.jsx";
 
 const Blockquote = ({
-  quote
+  quote,
   // authorName,
   // authorTitle,
   // authorOrganization,
@@ -42,7 +42,7 @@ Blockquote.propTypes = {
   authorName: PropTypes.string,
   authorTitle: PropTypes.string,
   authorOrganization: PropTypes.string,
-  authorUrl: PropTypes.string
+  authorUrl: PropTypes.string,
 };
 
 Blockquote.defaultProps = {
@@ -50,7 +50,7 @@ Blockquote.defaultProps = {
   authorName: "",
   authorTitle: "",
   authorOrganization: "",
-  authorUrl: "codefund.io"
+  authorUrl: "codefund.io",
 };
 
 export { Blockquote };

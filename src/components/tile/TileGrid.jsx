@@ -19,14 +19,14 @@ TileGrid.propTypes = {
   children: PropTypes.node,
   columns: PropTypes.number,
   mdColumns: PropTypes.number,
-  lgColumns: PropTypes.number
+  lgColumns: PropTypes.number,
 };
 
 TileGrid.defaultProps = {
   children: undefined,
   columns: 2,
   mdColumns: 3,
-  lgColumns: 2
+  lgColumns: 2,
 };
 
 export { TileGrid };

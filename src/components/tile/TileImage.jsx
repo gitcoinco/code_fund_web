@@ -11,12 +11,12 @@ const TileImage = ({ colspan, children }) => (
 
 TileImage.propTypes = {
   colspan: PropTypes.string,
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 TileImage.defaultProps = {
   colspan: "1",
-  children: undefined
+  children: undefined,
 };
 
 export { TileImage };

@@ -9,11 +9,11 @@ const BlockquoteFooter = ({ children }) => (
 );
 
 BlockquoteFooter.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 BlockquoteFooter.defaultProps = {
-  children: undefined
+  children: undefined,
 };
 
 export { BlockquoteFooter };

@@ -7,8 +7,8 @@ export default {
   title: "Divider",
   component: Divider,
   parameters: {
-    info: { inline: false }
-  }
+    info: { inline: false },
+  },
 };
 
 export const base = () => (

@@ -1,4 +1,4 @@
-export const normaliseResponsiveProp = value => {
+export const normaliseResponsiveProp = (value) => {
   if (typeof value === "string" || typeof value === "number") {
     return [value, value, value];
   }

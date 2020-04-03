@@ -1,79 +1,110 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
+import { v4 } from "uuid";
 
+// import { Image } from "../components/primitives/Image.jsx";
 import { Text } from "../components/primitives/Text.jsx";
-import { Heading } from "../components/primitives/Heading.jsx";
 import { Box } from "../components/primitives/Box.jsx";
+import { ButtonLink } from "../components/button/ButtonLink.jsx";
 import { Metric } from "../components/metric/Metric.jsx";
 import { MetricGrid } from "../components/metric/MetricGrid.jsx";
-import { Stack } from "../components/primitives/Stack.jsx";
-import Layout from "../components/Layout";
-import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
+import Features from "../components/Features";
 import Landing from "../components/Landing";
-import { ButtonLink } from "../components/button/ButtonLink.jsx";
+import Layout from "../components/Layout";
 import Testimonials from "../components/Testimonials";
+import { Heading } from "../components/primitives/Heading.jsx";
 
-export const IndexPageTemplate = ({
-  image,
-  title,
-  heading,
-  subheading,
-  mainpitch,
-  description,
-  intro,
-  testimonials
-}) => (
+export const IndexPageTemplate = ({ hero, mainpitch, intro, testimonials }) => (
   <Box>
     <Landing
-      image={image.childImageSharp ? image.childImageSharp.fluid.src : image}
-      title={title}
-      subtitle={subheading}
+      image={
+        hero.image.childImageSharp
+          ? hero.image.childImageSharp.fluid.src
+          : hero.image
+      }
+      title={hero.title}
+      subtitle={hero.subtitle}
+      copy={hero.copy}
     />
     <Box
-      is="section"
-      classNames="relative pt-6 pb-12 sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32"
+      component="section"
+      base="relative pt-6 pb-12"
+      sm="pb-16"
+      md="pb-20"
+      lg="pb-28"
+      xl="pb-32"
     >
-      <Box classNames="max-w-screen-xl mx-auto px-4 sm:px-6">
-        <Stack>
-          <Heading size="2">{mainpitch.title}</Heading>
-        </Stack>
-        <Stack space="xl">
-          <Text>{mainpitch.description}</Text>
-        </Stack>
-        <MetricGrid>
-          <Metric quantity="196" unit="Properties" />
-          <Metric quantity="45" unit="Campaigns" />
-          <Metric quantity="0.21%" unit="Avg. Click Rate" />
-        </MetricGrid>
-      </Box>
       <Testimonials testimonials={testimonials} />
-      <Box>
-        <Heading size="4">{heading}</Heading>
-        <Text>{description}</Text>
+      <Box base="bg-gray-50 pt-12" sm="pt-16">
+        <Box base="max-w-screen-xl mx-auto px-4" sm="px-6" lg="px-8">
+          <Box base="max-w-4xl mx-auto text-center">
+            <Heading level="3" align="center">
+              {mainpitch.title}
+            </Heading>
+            <Text
+              base="max-w-2xl mx-auto mt-3 sm:mt-4"
+              size="xl"
+              leading="7"
+              color="gray-500"
+              align="center"
+            >
+              {mainpitch.description}
+            </Text>
+          </Box>
+        </Box>
+        <Box base="mt-10 pb-12" sm="pb-16">
+          <MetricGrid>
+            {mainpitch.metrics.map((metric) => (
+              <div key={v4()}>
+                <Metric quantity={metric.quantity} unit={metric.unit} />
+              </div>
+            ))}
+          </MetricGrid>
+        </Box>
       </Box>
       <Features gridItems={intro.blurbs} />
-      <Box>
-        <Heading size="3">Latest Stories</Heading>
+      <Box
+        base="relative bg-gray-50 pt-16 pb-20 px-4"
+        sm="px-6"
+        lg="pt-24 pb-28 px-8"
+      >
+        <Box base="relative max-w-7xl mx-auto">
+          <Box base="max-w-4xl mx-auto text-center">
+            <Heading level="3" align="center">
+              From the blog
+            </Heading>
+            <Text
+              base="max-w-2xl mx-auto mt-3 sm:mt-4"
+              size="xl"
+              leading="7"
+              color="gray-500"
+              align="center"
+            >
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa
+              libero labore natus atque, ducimus sed.
+            </Text>
+          </Box>
+        </Box>
         <BlogRoll />
-        <ButtonLink route="/blog">See more</ButtonLink>
+        <Box base="w-full md:w-1/2 lg:w-1/4 mx-auto">
+          <ButtonLink route="/blog" type="md-primary">
+            See more
+          </ButtonLink>
+        </Box>
       </Box>
     </Box>
   </Box>
 );
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
   mainpitch: PropTypes.object,
-  description: PropTypes.string,
+  hero: PropTypes.object,
   testimonials: PropTypes.array,
   intro: PropTypes.shape({
-    blurbs: PropTypes.array
-  })
+    blurbs: PropTypes.array,
+  }),
 };
 
 const IndexPage = ({ data }) => {
@@ -82,12 +113,8 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
+        hero={frontmatter.hero}
         mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
         intro={frontmatter.intro}
         testimonials={frontmatter.testimonials}
       />
@@ -98,9 +125,9 @@ const IndexPage = ({ data }) => {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object
-    })
-  })
+      frontmatter: PropTypes.object,
+    }),
+  }),
 };
 
 export default IndexPage;
@@ -109,21 +136,36 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
+        hero {
+          title
+          subtitle
+          copy
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
-        heading
-        subheading
         mainpitch {
           title
           description
+          marketingImage {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            alt
+          }
+          metrics {
+            unit
+            quantity
+          }
         }
-        description
         intro {
           blurbs {
             image {
@@ -139,7 +181,15 @@ export const pageQuery = graphql`
           description
         }
         testimonials {
-          author
+          author {
+            name
+            title
+            company {
+              name
+              url
+              logo
+            }
+          }
           quote
         }
       }

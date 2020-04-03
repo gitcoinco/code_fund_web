@@ -6,11 +6,11 @@ const CardBody = ({ children }) => (
 );
 
 CardBody.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 CardBody.defaultProps = {
-  children: undefined
+  children: undefined,
 };
 
 export { CardBody };

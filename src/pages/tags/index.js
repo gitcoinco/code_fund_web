@@ -9,9 +9,9 @@ const TagsPage = ({
   data: {
     allMarkdownRemark: { group },
     site: {
-      siteMetadata: { title }
-    }
-  }
+      siteMetadata: { title },
+    },
+  },
 }) => (
   <Layout>
     <section className="">
@@ -21,7 +21,7 @@ const TagsPage = ({
           <div className="" style={{ marginBottom: "6rem" }}>
             <h1 className="">Tags</h1>
             <ul className="">
-              {group.map(tag => (
+              {group.map((tag) => (
                 <li key={tag.fieldValue}>
                   <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
                     {tag.fieldValue} ({tag.totalCount})
@@ -39,14 +39,14 @@ const TagsPage = ({
 TagsPage.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      group: PropTypes.object
+      group: PropTypes.object,
     }),
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({
-        title: PropTypes.string
-      })
-    })
-  })
+        title: PropTypes.string,
+      }),
+    }),
+  }),
 };
 
 export default TagsPage;

@@ -6,11 +6,11 @@ const CardHeader = ({ children }) => (
 );
 
 CardHeader.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 CardHeader.defaultProps = {
-  children: undefined
+  children: undefined,
 };
 
 export { CardHeader };

@@ -15,14 +15,14 @@ const Divider = () => {
 
 Divider.propTypes = {
   color: PropTypes.string,
-  size: PropTypes.string
+  size: PropTypes.string,
 };
 
 Divider.defaultProps = {
   is: "div",
   children: undefined,
   display: "block",
-  classNames: undefined
+  classNames: undefined,
 };
 
 export { Divider };

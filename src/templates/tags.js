@@ -7,7 +7,7 @@ import Layout from "../components/Layout";
 class TagRoute extends React.Component {
   render() {
     const posts = this.props.data.allMarkdownRemark.edges;
-    const postLinks = posts.map(post => (
+    const postLinks = posts.map((post) => (
       <li key={post.node.fields.slug}>
         <Link to={post.node.fields.slug}>
           <h2 className="">{post.node.frontmatter.title}</h2>
@@ -46,17 +46,17 @@ TagRoute.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.object,
-      totalCount: PropTypes.number
+      totalCount: PropTypes.number,
     }),
     site: PropTypes.shape({
       siteMetadata: PropTypes.shape({
-        title: PropTypes.string
-      })
-    })
+        title: PropTypes.string,
+      }),
+    }),
   }),
   pageContext: PropTypes.shape({
-    tag: PropTypes.object
-  })
+    tag: PropTypes.object,
+  }),
 };
 
 export default TagRoute;

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Image = ({ type, src, alt }) => {
-  const classes = t => {
+  const classes = (t) => {
     switch (t) {
       case "avatar":
         return "h-12 rounded-full";
@@ -23,13 +23,13 @@ const Image = ({ type, src, alt }) => {
 Image.propTypes = {
   type: PropTypes.string,
   src: PropTypes.string,
-  alt: PropTypes.string
+  alt: PropTypes.string,
 };
 
 Image.defaultProps = {
   type: "tile",
   src: "#",
-  alt: "alt text"
+  alt: "alt text",
 };
 
 export { Image };

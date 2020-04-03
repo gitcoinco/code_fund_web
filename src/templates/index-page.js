@@ -15,6 +15,7 @@ import { ButtonLink } from "../components/button/ButtonLink.jsx";
 import Testimonials from "../components/Testimonials";
 
 export const IndexPageTemplate = ({
+  hero,
   image,
   title,
   subheading,
@@ -23,6 +24,11 @@ export const IndexPageTemplate = ({
   testimonials
 }) => (
     <Box>
+    <Landing
+      image={image.childImageSharp ? image.childImageSharp.fluid.src : image}
+      title={hero.title}
+      subtitle={hero.subtitle}
+    />
     <Landing
       image={image.childImageSharp ? image.childImageSharp.fluid.src : image}
       title={title}
@@ -63,6 +69,7 @@ IndexPageTemplate.propTypes = {
   title: PropTypes.string,
   subheading: PropTypes.string,
   mainpitch: PropTypes.object,
+  hero: PropTypes.object,
   testimonials: PropTypes.array,
   intro: PropTypes.shape({
     blurbs: PropTypes.array
@@ -75,6 +82,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
+        hero={frontmatter.hero}
         image={frontmatter.image}
         title={frontmatter.title}
         subheading={frontmatter.subheading}
@@ -100,6 +108,10 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
+        hero {
+          title
+          subtitle
+        }
         title
         image {
           childImageSharp {

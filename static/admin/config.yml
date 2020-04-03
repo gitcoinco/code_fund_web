@@ -50,6 +50,16 @@ collections:
           - { label: Heading, name: heading, widget: string }
           - { label: Subheading, name: subheading, widget: string }
           - {
+              label: Hero,
+              name: hero,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Subtitle, name: subtitle, widget: text },
+                ],
+            }
+          - {
               label: Mainpitch,
               name: mainpitch,
               widget: object,

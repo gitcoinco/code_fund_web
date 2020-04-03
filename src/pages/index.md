@@ -4,6 +4,9 @@ title: Title Change
 image: /img/dashboard-ui.png
 heading: Heading
 subheading: Subheading
+hero:
+  title: Hero title
+  subtitle: Hero subtitle
 mainpitch:
   title: Mainpitch title
   description: Mainpitch description

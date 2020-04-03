@@ -12,7 +12,7 @@ export const Margin = ({
   children
 }) => {
   const classes = `m-${all} mt-${top} mr-${right} mb-${bottom} ml-${left} mx-${xAxis} my-${yAxis}`;
-  return <div className={classes}>{children}</div>
+  return <div className={classes}>{children}</div>;
 };
 
 Margin.propTypes = {

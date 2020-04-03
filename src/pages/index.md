@@ -8,7 +8,7 @@ hero:
   title: 378,873,680+
   subtitle: ads displayed through our ethical advertising network
   copy: >-
-      CodeFund focuses on providing an ethical alternative to digital advertising that drives results and respect from our technical audience
+    CodeFund focuses on providing an ethical alternative to digital advertising that drives results and respect from our technical audience
   image: /img/dashboard-ui.png
 mainpitch:
   title: Mainpitch title
@@ -19,14 +19,33 @@ intro:
   heading: Intro heading
   description: Intro description
 testimonials:
-  - author: Elisabeth Kaurismäki
+  - author:
+      name: Chipper Nicodemus
+      title: Sr. Mgr of Acquisition
+      company:
+        name: Segment
+        url: https://segment.com/
+        logo: img/segment.svg
     quote: >-
-      The first time I tried Kaldi’s coffee, I couldn’t even believe that was
-      the same thing I’ve been drinking every morning.
-  - author: Philipp Trommler
+      CodeFund has quickly become one of our highest converting channels. If you want to reach a technical audiences look no further than CodeFund!
+  - author:
+      name: Ido Shamun
+      title: Creator
+      company:
+        name: Daily
+        url: https://www.dailynow.co/
+        logo: img/daily.svg
     quote: >-
-      Kaldi is the place to go if you want the best quality coffee. I love their
-      stance on empowering farmers and transparency.
+      CodeFund helps us making a sustainable community while keeping our high standard UX.
+  - author:
+      name: Feross
+      title: Open Source Maintainer
+      company:
+        name: 100+ Packages
+        url: https://www.npmjs.com/~feross
+        logo: img/feross.png
+    quote: >-
+      CodeFund makes it easy for open source maintainers to get paid.
 main:
   heading: Main heading
   description: Main description

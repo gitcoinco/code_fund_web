@@ -9,14 +9,26 @@ import { ButtonLink } from "./button/ButtonLink.jsx";
 const Landing = ({ image, title, subtitle, copy }) => (
   <Box base="relative bg-white overflow-hidden">
     <Box base="max-w-screen-xl mx-auto">
-      <Box base="relative z-10 pb-8 bg-white" sm="pb-16" md="pb-20" lg="max-w-2xl w-full pb-28" xl="pb-32">
-        <Box base="max-w-screen-xl px-4 mx-auto mt-10" sm="mt-12 px-6" md="mt-16" lg="mt-20 px-8" xl="mt-28">
+      <Box
+        base="relative z-10 pb-8 bg-white"
+        sm="pb-16"
+        md="pb-20"
+        lg="max-w-2xl w-full pb-28"
+        xl="pb-32"
+      >
+        <Box
+          base="max-w-screen-xl px-4 mx-auto mt-10"
+          sm="mt-12 px-6"
+          md="mt-16"
+          lg="mt-20 px-8"
+          xl="mt-28"
+        >
           <Box base="text-center" lg="text-left">
             <Heading size="1">{title}</Heading>
             <Heading size="3">{subtitle}</Heading>
             <Text>{copy}</Text>
             <Box base="mt-5" sm="mt-8 flex justify-center" lg="justify-start">
-              <Box base="rounded-md shadow" >
+              <Box base="rounded-md shadow">
                 <ButtonLink>Get Started</ButtonLink>
               </Box>
               <Box base="mt-3" sm="mt-0 ml-3">

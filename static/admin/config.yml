@@ -45,10 +45,7 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
-          - { label: Title, name: title, widget: string }
-          - { label: Image, name: image, widget: image }
           - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
           - {
               label: Hero,
               name: hero,
@@ -225,7 +222,16 @@ collections:
               fields:
                 [
                   { label: Quote, name: quote, widget: string },
-                  { label: Author, name: author, widget: string },
+                  {
+                    label: Author,
+                    name: author,
+                    widget: object,
+                    fields:
+                      [
+                        { label: Name, name: name, widget: string },
+                        { label: Title, name: title, widget: string },
+                      ],
+                  },
                 ],
             }
           - { label: Full_image, name: full_image, widget: image }

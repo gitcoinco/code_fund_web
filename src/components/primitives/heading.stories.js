@@ -1,7 +1,6 @@
 import React from "react";
 
 import { Heading } from "./Heading.jsx";
-import { Box } from "./Box.jsx";
 
 export default {
   title: "Heading",

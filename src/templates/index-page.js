@@ -14,26 +14,17 @@ import Landing from "../components/Landing";
 import { ButtonLink } from "../components/button/ButtonLink.jsx";
 import Testimonials from "../components/Testimonials";
 
-export const IndexPageTemplate = ({
-  hero,
-  image,
-  title,
-  subheading,
-  mainpitch,
-  intro,
-  testimonials
-}) => (
-    <Box>
+export const IndexPageTemplate = ({ hero, mainpitch, intro, testimonials }) => (
+  <Box>
     <Landing
-      image={hero.image.childImageSharp ? hero.image.childImageSharp.fluid.src : hero.image}
+      image={
+        hero.image.childImageSharp
+          ? hero.image.childImageSharp.fluid.src
+          : hero.image
+      }
       title={hero.title}
       subtitle={hero.subtitle}
       copy={hero.copy}
-    />
-    <Landing
-      image={image.childImageSharp ? image.childImageSharp.fluid.src : image}
-      title={title}
-      subtitle={subheading}
     />
     <Box
       component="section"
@@ -43,6 +34,8 @@ export const IndexPageTemplate = ({
       lg="pb-28"
       xl="pb-32"
     >
+      <Testimonials testimonials={testimonials} />
+
       <Box base="max-w-screen-xl mx-auto px-4" sm="px-6">
         <Heading size="2">{mainpitch.title}</Heading>
         <Text>{mainpitch.description}</Text>
@@ -52,8 +45,6 @@ export const IndexPageTemplate = ({
           <Metric quantity="0.21%" unit="Avg. Click Rate" />
         </MetricGrid>
       </Box>
-
-      <Testimonials testimonials={testimonials} />
 
       <Features gridItems={intro.blurbs} />
       <Box>
@@ -66,9 +57,6 @@ export const IndexPageTemplate = ({
 );
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
-  subheading: PropTypes.string,
   mainpitch: PropTypes.object,
   hero: PropTypes.object,
   testimonials: PropTypes.array,
@@ -76,6 +64,17 @@ IndexPageTemplate.propTypes = {
     blurbs: PropTypes.array
   })
 };
+// IndexPageTemplate.propTypes = {
+//   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+//   title: PropTypes.string,
+//   subheading: PropTypes.string,
+//   mainpitch: PropTypes.object,
+//   hero: PropTypes.object,
+//   testimonials: PropTypes.array,
+//   intro: PropTypes.shape({
+//     blurbs: PropTypes.array
+//   })
+// };
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
@@ -84,9 +83,6 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         hero={frontmatter.hero}
-        image={frontmatter.image}
-        title={frontmatter.title}
-        subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
         intro={frontmatter.intro}
         testimonials={frontmatter.testimonials}
@@ -121,15 +117,6 @@ export const pageQuery = graphql`
             }
           }
         }
-        title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        subheading
         mainpitch {
           title
           description
@@ -149,7 +136,15 @@ export const pageQuery = graphql`
           description
         }
         testimonials {
-          author
+          author {
+            name
+            title
+            company {
+              name
+              url
+              logo
+            }
+          }
           quote
         }
       }

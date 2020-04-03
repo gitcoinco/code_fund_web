@@ -12,7 +12,7 @@ export const Flex = ({
   children
 }) => {
   const classes = `h-${height} w-${width} ${display} flex-${direction} flex-${wrap} justify-${justify} items-${align}`;
-  return <div className={classes}>{children}</div>
+  return <div className={classes}>{children}</div>;
 };
 
 Flex.propTypes = {

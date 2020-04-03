@@ -12,7 +12,7 @@ export const Padding = ({
   children
 }) => {
   const classes = `p-${all} pt-${top} pr-${right} pb-${bottom} pl-${left} px-${xAxis} py-${yAxis}`;
-  return <div className={classes}>{children}</div>
+  return <div className={classes}>{children}</div>;
 };
 
 Padding.propTypes = {

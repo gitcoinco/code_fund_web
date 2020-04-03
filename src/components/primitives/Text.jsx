@@ -9,10 +9,11 @@ export const Text = ({
   size,
   weight,
   align,
+  position,
   children
 }) => {
   const Component = element;
-  const classes = `text-${color} font-${font} text-${size} font-${weight} text-${align} leading-${leading}`;
+  const classes = `text-${color} font-${font} text-${size} font-${weight} text-${align} leading-${leading} position-${position}`;
   return <Component className={classes}>{children}</Component>;
 };
 
@@ -25,7 +26,8 @@ Text.propTypes = {
   fontStyle: PropTypes.string,
   size: PropTypes.string,
   weight: PropTypes.string,
-  leading: PropTypes.string
+  leading: PropTypes.string,
+  position: PropTypes.string
 };
 
 Text.defaultProps = {
@@ -36,5 +38,6 @@ Text.defaultProps = {
   font: "sans",
   size: "base",
   weight: "normal",
-  leading: "normal"
+  leading: "normal",
+  position: "relative"
 };

@@ -15,30 +15,16 @@ export const element = () => (
   <Text element="strong">This is a strong element</Text>
 );
 
-export const defaultText = () => (
-  <Text>{lorem}</Text>
-);
+export const defaultText = () => <Text>{lorem}</Text>;
 
-export const alignText = () => (
-  <Text align="center">{lorem}</Text>
-);
+export const alignText = () => <Text align="center">{lorem}</Text>;
 
-export const colorText = () => (
-  <Text color="blue">{lorem}</Text>
-);
+export const colorText = () => <Text color="blue">{lorem}</Text>;
 
-export const font = () => (
-  <Text font="sans-serif">{lorem}</Text>
-);
+export const font = () => <Text font="sans-serif">{lorem}</Text>;
 
-export const size = () => (
-  <Text size="xl">{lorem}</Text>
-);
+export const size = () => <Text size="xl">{lorem}</Text>;
 
-export const weight = () => (
-  <Text weight="bold">{lorem}</Text>
-);
+export const weight = () => <Text weight="bold">{lorem}</Text>;
 
-export const leading = () => (
-  <Text leading="loose">{lorem}</Text>
-);
+export const leading = () => <Text leading="loose">{lorem}</Text>;

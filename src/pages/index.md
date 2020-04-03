@@ -16,6 +16,9 @@ mainpitch:
     CodeFund was founded and is run by a small team of open source maintainers and sustainers.
 
     We are uniquely qualified to help you succeed when advertising to software developers.
+  marketingImage:
+    image: /img/undraw_programming.png
+    alt: Programming
   metrics:
     - quantity: "196"
       unit: Properties

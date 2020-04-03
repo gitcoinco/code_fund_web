@@ -67,6 +67,16 @@ collections:
                   { label: Title, name: title, widget: string },
                   { label: Description, name: description, widget: text },
                   {
+                    label: Marketing Image,
+                    name: marketingImage,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Alt, name: alt, widget: string },
+                        { label: Image, name: image, widget: image },
+                      ],
+                  },
+                  {
                     label: Metrics,
                     name: metrics,
                     widget: list,

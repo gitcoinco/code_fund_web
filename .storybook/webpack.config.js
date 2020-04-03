@@ -16,13 +16,13 @@ module.exports = ({ config }) => {
                 Set postcss.config.js config path && ctx
                */
           config: {
-            path: "./.storybook/"
-          }
-        }
-      }
+            path: "./.storybook/",
+          },
+        },
+      },
     ],
 
-    include: path.resolve(__dirname, "../")
+    include: path.resolve(__dirname, "../"),
   });
   // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
   config.module.rules[0].exclude = [/node_modules\/(?!(gatsby)\/)/];
@@ -33,14 +33,14 @@ module.exports = ({ config }) => {
   // use @babel/preset-react for JSX and env (instead of staged presets)
   config.module.rules[0].use[0].options.presets = [
     require.resolve("@babel/preset-react"),
-    require.resolve("@babel/preset-env")
+    require.resolve("@babel/preset-env"),
   ];
 
   config.module.rules[0].use[0].options.plugins = [
     // use @babel/plugin-proposal-class-properties for class arrow functions
     require.resolve("@babel/plugin-proposal-class-properties"),
     // use babel-plugin-remove-graphql-queries to remove static queries from components when rendering in storybook
-    require.resolve("babel-plugin-remove-graphql-queries")
+    require.resolve("babel-plugin-remove-graphql-queries"),
   ];
 
   // Prefer Gatsby ES6 entrypoint (module) over commonjs (main) entrypoint

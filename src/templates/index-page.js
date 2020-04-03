@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import { v4 } from "uuid";
 
+import { Image } from "../components/primitives/Image.jsx";
 import { Text } from "../components/primitives/Text.jsx";
 import { Heading } from "../components/primitives/Heading.jsx";
 import { Box } from "../components/primitives/Box.jsx";
@@ -37,21 +38,68 @@ export const IndexPageTemplate = ({ hero, mainpitch, intro, testimonials }) => (
     >
       <Testimonials testimonials={testimonials} />
 
-      <Box base="max-w-screen-xl mx-auto px-4" sm="px-6">
-        <Heading size="2">{mainpitch.title}</Heading>
-        <Text>{mainpitch.description}</Text>
-        <MetricGrid>
-          {mainpitch.metrics.map((metric) => (
-            <div key={v4()}>
-              <Metric quantity={metric.quantity} unit={metric.unit} />
-            </div>
-          ))}
-        </MetricGrid>
+      <Box base="bg-gray-50 pt-12" sm="pt-16">
+        <Box base="max-w-screen-xl mx-auto px-4" sm="px-6" lg="px-8">
+          <Box base="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+              {mainpitch.title}
+            </h2>
+            <p className="max-w-2xl mx-auto mt-3 text-xl leading-7 text-gray-500 sm:mt-4">
+              {mainpitch.description}
+            </p>
+          </Box>
+        </Box>
+        <Box base="mt-10 pb-12" sm="pb-16">
+          <MetricGrid>
+            {mainpitch.metrics.map((metric) => (
+              <div key={v4()}>
+                <Metric quantity={metric.quantity} unit={metric.unit} />
+              </div>
+            ))}
+          </MetricGrid>
+        </Box>
       </Box>
+
+      {/* <Box base="max-w-screen-xl mx-auto px-4" sm="px-6">
+        <Box base="flex">
+          <Box>
+            <Box base="mb-4">
+              <h2 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+                {mainpitch.title}
+              </h2>
+              <p className="max-w-2xl mx-auto mt-3 text-xl leading-7 text-gray-500 sm:mt-4">
+                {mainpitch.description}
+              </p>
+            </Box>
+            <MetricGrid>
+              {mainpitch.metrics.map((metric) => (
+                <div key={v4()}>
+                  <Metric quantity={metric.quantity} unit={metric.unit} />
+                </div>
+              ))}
+            </MetricGrid>
+          </Box>
+          <Box>
+            <Image
+              type="display"
+              alt={mainpitch.marketingImage.alt}
+              src={
+                mainpitch.marketingImage.image.childImageSharp
+                  ? mainpitch.marketingImage.image.childImageSharp.fluid.src
+                  : mainpitch.marketingImage.image
+              }
+            />
+          </Box>
+        </Box>
+      </Box> */}
 
       <Features gridItems={intro.blurbs} />
 
-      <Box base="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+      <Box
+        base="relative bg-gray-50 pt-16 pb-20 px-4"
+        sm="px-6"
+        lg="pt-24 pb-28 px-8"
+      >
         <Box base="relative max-w-7xl mx-auto">
           <Box base="text-center">
             <h2 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
@@ -64,9 +112,11 @@ export const IndexPageTemplate = ({ hero, mainpitch, intro, testimonials }) => (
           </Box>
         </Box>
         <BlogRoll />
-        <ButtonLink route="/blog" type="md-primary">
-          See more
-        </ButtonLink>
+        <Box base="w-full md:w-1/2 lg:w-1/4 mx-auto">
+          <ButtonLink route="/blog" type="md-primary">
+            See more
+          </ButtonLink>
+        </Box>
       </Box>
     </Box>
   </Box>
@@ -136,6 +186,16 @@ export const pageQuery = graphql`
         mainpitch {
           title
           description
+          marketingImage {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            alt
+          }
           metrics {
             unit
             quantity

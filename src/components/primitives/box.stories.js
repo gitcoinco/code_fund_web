@@ -1,7 +1,6 @@
 import React from "react";
 
 import { Box } from "./Box.jsx";
-import { Stack } from "./Stack.jsx";
 import { Image } from "./Image.jsx";
 import CodefundLogo from "../../img/logos/codefund.svg";
 
@@ -15,8 +14,6 @@ export default {
 
 export const base = () => (
   <Box>
-    <Stack space="md">
-      <Image src={CodefundLogo} alt="CodeFund Logo" type="tile" />
-    </Stack>
+    <Image src={CodefundLogo} alt="CodeFund Logo" type="tile" />
   </Box>
 );

@@ -28,7 +28,7 @@ const Heading = ({ level, align, children }) => {
   const classes = `${resolveClasses[level]} ${resolveAlignmentClass(align)}`;
 
   return (
-    <Box is={resolveLevel[level]} classNames={classes}>
+    <Box component={resolveLevel[level]} base={classes}>
       {children}
     </Box>
   );

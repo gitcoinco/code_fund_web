@@ -1,30 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Box = ({ is, children, display, position, classNames }) => {
-  const Component = is === "div" && display === "inline" ? "span" : is;
-  const classes =
-    position || classNames
-      ? [classNames, position].filter(Boolean).join(" ")
-      : undefined;
+export const Box = ({ component, base, sm, md, lg, xl, children }) => {
+  const Component = component
+  const smClasses = sm.split(" ").map(s => `sm:${s}`)
+  const mdClasses = md.split(" ").map(m => `md:${m}`)
+  const lgClasses = lg.split(" ").map(lg => `lg:${lg}`)
+  const xlClasses = xl.split(" ").map(xl => `xl:${xl}`)
+  const classes = [base, smClasses, mdClasses, lgClasses, xlClasses].flat().join(" ")
 
   return <Component className={classes}>{children}</Component>;
 };
 
 Box.propTypes = {
-  is: PropTypes.oneOfType([PropTypes.string, PropTypes.func, PropTypes.object]),
   children: PropTypes.node,
-  display: PropTypes.string,
-  classNames: PropTypes.string,
-  position: PropTypes.string
+  component: PropTypes.string,
+  base: PropTypes.string,
+  sm: PropTypes.string,
+  md: PropTypes.string,
+  lg: PropTypes.string,
+  xl: PropTypes.string
 };
 
 Box.defaultProps = {
-  is: "div",
   children: undefined,
-  display: "block",
-  classNames: undefined,
-  position: undefined
+  component: "div",
+  base: "w-full",
+  sm: "",
+  md: "",
+  lg: "",
+  xl: ""
 };
-
-export { Box };

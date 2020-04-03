@@ -7,7 +7,7 @@ import { Card, CardBody, CardFooter } from "./card/index";
 
 const Testimonials = ({ testimonials }) => {
   return (
-    <Box classNames="flex">
+    <Box>
       {testimonials.map(testimonial => (
         <article key={v4()}>
           <Card bgColor="gray-800" textColor="white">

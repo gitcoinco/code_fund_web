@@ -25,9 +25,10 @@ export const IndexPageTemplate = ({
 }) => (
     <Box>
     <Landing
-      image={image.childImageSharp ? image.childImageSharp.fluid.src : image}
+      image={hero.image.childImageSharp ? hero.image.childImageSharp.fluid.src : hero.image}
       title={hero.title}
       subtitle={hero.subtitle}
+      copy={hero.copy}
     />
     <Landing
       image={image.childImageSharp ? image.childImageSharp.fluid.src : image}
@@ -111,6 +112,14 @@ export const pageQuery = graphql`
         hero {
           title
           subtitle
+          copy
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
         title
         image {

@@ -57,6 +57,8 @@ collections:
                 [
                   { label: Title, name: title, widget: string },
                   { label: Subtitle, name: subtitle, widget: text },
+                  { label: Copy, name: copy, widget: text },
+                  { label: Image, name: image, widget: image },
                 ],
             }
           - {

@@ -5,8 +5,11 @@ image: /img/dashboard-ui.png
 heading: Heading
 subheading: Subheading
 hero:
-  title: Hero title
-  subtitle: Hero subtitle
+  title: 378,873,680+
+  subtitle: ads displayed through our ethical advertising network
+  copy: >-
+      CodeFund focuses on providing an ethical alternative to digital advertising that drives results and respect from our technical audience
+  image: /img/dashboard-ui.png
 mainpitch:
   title: Mainpitch title
   description: Mainpitch description

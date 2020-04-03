@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
+import { v4 } from "uuid";
 
 import { Text } from "../components/primitives/Text.jsx";
 import { Heading } from "../components/primitives/Heading.jsx";
@@ -40,17 +41,32 @@ export const IndexPageTemplate = ({ hero, mainpitch, intro, testimonials }) => (
         <Heading size="2">{mainpitch.title}</Heading>
         <Text>{mainpitch.description}</Text>
         <MetricGrid>
-          <Metric quantity="196" unit="Properties" />
-          <Metric quantity="45" unit="Campaigns" />
-          <Metric quantity="0.21%" unit="Avg. Click Rate" />
+          {mainpitch.metrics.map((metric) => (
+            <div key={v4()}>
+              <Metric quantity={metric.quantity} unit={metric.unit} />
+            </div>
+          ))}
         </MetricGrid>
       </Box>
 
       <Features gridItems={intro.blurbs} />
-      <Box>
-        <Heading size="3">Latest Stories</Heading>
+
+      <Box base="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+        <Box base="relative max-w-7xl mx-auto">
+          <Box base="text-center">
+            <h2 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+              From the blog
+            </h2>
+            <p className="max-w-2xl mx-auto mt-3 text-xl leading-7 text-gray-500 sm:mt-4">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa
+              libero labore natus atque, ducimus sed.
+            </p>
+          </Box>
+        </Box>
         <BlogRoll />
-        <ButtonLink route="/blog">See more</ButtonLink>
+        <ButtonLink route="/blog" type="md-primary">
+          See more
+        </ButtonLink>
       </Box>
     </Box>
   </Box>
@@ -120,6 +136,10 @@ export const pageQuery = graphql`
         mainpitch {
           title
           description
+          metrics {
+            unit
+            quantity
+          }
         }
         intro {
           blurbs {

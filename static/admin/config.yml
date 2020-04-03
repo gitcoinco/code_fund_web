@@ -66,6 +66,16 @@ collections:
                 [
                   { label: Title, name: title, widget: string },
                   { label: Description, name: description, widget: text },
+                  {
+                    label: Metrics,
+                    name: metrics,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Quantity, name: quantity, widget: string },
+                        { label: Unit, name: unit, widget: string },
+                      ],
+                  },
                 ],
             }
           - { label: Description, name: description, widget: string }

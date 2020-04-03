@@ -11,8 +11,18 @@ hero:
     CodeFund focuses on providing an ethical alternative to digital advertising that drives results and respect from our technical audience
   image: /img/dashboard-ui.png
 mainpitch:
-  title: Mainpitch title
-  description: Mainpitch description
+  title: Think of us as your direct channel to devs
+  description: >-
+    CodeFund was founded and is run by a small team of open source maintainers and sustainers.
+
+    We are uniquely qualified to help you succeed when advertising to software developers.
+  metrics:
+    - quantity: "196"
+      unit: Properties
+    - quantity: "45"
+      unit: Campaigns
+    - quantity: "0.21%"
+      unit: Click Rate
 description: Description
 intro:
   blurbs: []
